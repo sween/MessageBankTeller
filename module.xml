@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+  <Document name="MessageBankTeller.ZPM">
+    <Module>
+      <Name>MessageBankTeller</Name>
+      <Version>0.0.1</Version>
+      <Description>The missing index for InterSystems Message Bank Implementations</Description>
+      <Keywords>Message Bank, Search</Keywords>
+      <ExternalName>Message Bank Teller</ExternalName>
+      <Author>
+        <Person>Ron Sweeney</Person>
+        <Organization>Integration Required</Organization>
+        <CopyrightDate>2023</CopyrightDate>
+      </Author>
+      <Packaging>module</Packaging>
+      <SourcesRoot>src</SourcesRoot>
+      <Resource Name="ZMSPMB.PKG"/>
+    </Module>
+  </Document>
+</Export>
