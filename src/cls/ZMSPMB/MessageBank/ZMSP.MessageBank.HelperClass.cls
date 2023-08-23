@@ -1,7 +1,5 @@
-Class ZMSP.MessageBank.HelperClass
+Class cls.ZMSPMB.MessageBank.ZMSP.MessageBank.HelperClass
 {
-
-//Property myproperty As ... //This actually needs to be a part of the Ens.Message
 
 ClassMethod OnBankMsg(pHeader As Ens.Enterprise.MsgBank.MessageHeader, pFullHeaderID As %String, pBody As %RegisteredObject = "", pFullBodyID As %String, pService As Ens.Enterprise.MsgBank.TCPService) As %Status
 {
@@ -10,6 +8,6 @@ ClassMethod OnBankMsg(pHeader As Ens.Enterprise.MsgBank.MessageHeader, pFullHead
     Do ##class(ZMSP.MessageBank.SearchTable).IndexDoc(pStream)
   }
   Quit $$$OK
-
 }
+
 }
