@@ -13,9 +13,9 @@ Property KeepIntegrity As %Boolean [ InitialExpression = 1 ];
 Property BodiesToo As %Boolean [ InitialExpression = 1 ];
 */
 /// The type of thing to purge
-Property BanksToTune As %String(DISPLAYLIST = ",THH,NWL,Messages,Business Processes,Rule Logs,I/O Logs,Host Monitor Data,Managed Alerts", VALUELIST = ",THH,NWL") [ InitialExpression = "THH", Required ];
+Property BanksToTune As %String(DISPLAYLIST = ",THH,NWL", VALUELIST = ",THH,NWL") [ InitialExpression = "THH", Required ];
 
-
+Property Gars As %List(); // [ InitialExpression = $$$LISTBUILD("GAR","GAR2")];
 /// This defines the user-visible name of this task
 Parameter TaskName As STRING = "ZMSP NWL Message Bank Tune Table";
 
@@ -47,6 +47,7 @@ ClassMethod Process() As %Status
 {
 	Set tStatus = $$$OK
 	//..BanksToTune
+	Set tStatus = ..SetRW()
 	Try {
         // Backup Current Stats
         Do $SYSTEM.SQL.Stats.Table.Export("/tmp/tunestats.xml","Ens_Enterprise_MsgBank","MessageHeader")
@@ -59,6 +60,7 @@ ClassMethod Process() As %Status
 	} Catch eException {
 		Set tStatus = eException.AsStatus()
 	}
+	Set tStatus = ..SetRO()
 	Quit tStatus
 }
 ClassMethod SetRW() As %Status
