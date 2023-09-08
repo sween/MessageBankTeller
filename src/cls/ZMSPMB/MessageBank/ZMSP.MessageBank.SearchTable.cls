@@ -23,7 +23,7 @@ ID
 NodeId
 TimeBanked
 */
-Parameter DOCCLASS = "Ens.Enterprise.MsgBank.MessageHeader";
+Parameter DOCCLASS = "Ens.Enterprise.MsgBank.MessageHeader"
 
 ClassMethod OnIndexDoc(pDocObj As Ens.Enterprise.MsgBank.MessageHeader, pSearchTable As ZMSP.MessageBank.SearchTable) As %Status
 {
